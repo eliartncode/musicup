@@ -1,0 +1,5 @@
+const DATA = {
+    PORT: 6020,
+    TOKEN_KEY: 'gKsCmJwkAYB9Ue7UtTvbwN8hlSfupXOV',
+    SESSION_KEY: '2bwjKeEIgW4UlU0FNgbKGhEF8LnW6ASM',
+}
