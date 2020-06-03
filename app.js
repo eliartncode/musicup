@@ -6,7 +6,6 @@ const session = require('express-session');
 const constants = require('./util/constants');
 const connection = require('./util/connection');
 
-
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -29,10 +28,16 @@ const fileStorage = multer.diskStorage({
 });
 
 app.use(multer({ storage: fileStorage, limits: {fileSize: 250336978} }).single('image'));
+app.use(session({ secret: '2bwjKeEIgW4UlU0FNgbKGhEF8LnW6ASM', resave:false, saveUninitialized: false }));
 
 
 const indexRoutes = require('./routes/index');
 app.use('/', indexRoutes);
+
+const accountsRoutes = require('./routes/accounts');
+app.use('/account', accountsRoutes);
+
+
 
 
 

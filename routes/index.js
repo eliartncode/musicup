@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/index');
-//isAuth
+const isAuth = require('../middleware/isAuth');
 
-router.get('/', indexController.loadIndex);
+router.get('/', isAuth, indexController.loadIndex);
 
 
 
